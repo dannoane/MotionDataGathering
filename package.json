@@ -1,0 +1,30 @@
+{
+  "name": "MotionDataGathering",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.3.0-alpha.2",
+    "react-native": "0.54.2",
+    "react-native-keep-awake": "^3.0.1",
+    "react-native-queue": "^1.2.0",
+    "react-redux": "^5.0.7",
+    "realm": "^2.2.15",
+    "redux": "^3.7.2",
+    "rxjs": "^5.5.7"
+  },
+  "devDependencies": {
+    "babel-jest": "23.0.0-alpha.0",
+    "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "23.0.0-alpha.0",
+    "react-test-renderer": "16.3.0-alpha.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
