@@ -13,13 +13,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      uploading: false
+      working: false
     };
   }
 
   async uploadData() {
 
-    this.setState({ uploading: true });
+    this.setState({ working: true });
 
     let success, data, allData;
 
@@ -48,7 +48,16 @@ class App extends Component {
 
     await Storage.clearStorage();
 
-    this.setState({ uploading: false });    
+    this.setState({ working: false });    
+  }
+
+  async deleteData() {
+
+    this.setState({ working: true });
+
+    await Storage.clearStorage();
+
+    this.setState({ working: false });
   }
   
   render() {
@@ -79,12 +88,17 @@ class App extends Component {
         
         <Button
           title={this.props.collectData ? "Stop Collecting" : "Collect Data"}
-          onPress={() => this.props.onCollectData(!this.props.collectData)} />
+          onPress={() => { this.setState({working: !this.state.working}); this.props.onCollectData(!this.props.collectData); }} />
         
         <Button
           title={"Upload Data"}
-          disabled={this.state.uploading}
+          disabled={this.state.working}
           onPress={() => this.uploadData()} />
+
+        <Button
+          title={"Remove Data"}
+          disabled={this.state.working}
+          onPress={() => this.deleteData()} />
 
         <Text>
           {`${this.props.id}`}
