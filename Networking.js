@@ -6,7 +6,7 @@ export default class Networking {
         let success = false;
 
         try {
-            let res = await fetch('http://192.168.100.8:3000/motion', {
+            let res = await fetch('http://feelfit.westeurope.cloudapp.azure.com:3000/motion', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
